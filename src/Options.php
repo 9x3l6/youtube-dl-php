@@ -147,6 +147,7 @@ class Options
     // Verbosity / Simulation Options
     private bool $skipDownload = false;
     private bool $verbose = false;
+    private bool $update = false;
     private bool $writePages = false;
     private bool $printTraffic = false;
     private bool $callHome = false;
@@ -1005,6 +1006,17 @@ class Options
     {
         $new = clone $this;
         $new->verbose = $verbose;
+
+        return $new;
+    }
+
+    /**
+     * Check if updates are available.
+     */
+    public function update(bool $update): self
+    {
+        $new = clone $this;
+        $new->update = $update;
 
         return $new;
     }
